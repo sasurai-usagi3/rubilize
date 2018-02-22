@@ -1,0 +1,14 @@
+version: '2'
+services:
+  rubilize:
+    container_name: rubilize
+    build:
+      context: .
+      args:
+        - MODE=${MODE}
+    ports:
+      - "${HOST_PORT}:${CONTAINER_PORT}"
+    volumes:
+      - "${APP_PATH}:/var/www/html/insta_profile"
+    env_file:
+      - .env
