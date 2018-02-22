@@ -8,7 +8,7 @@ require 'natto'
 get '/' do
   client = Natto::MeCab.new('-F%m\t%f[7]\n')
   body = JSON.parse request.body.read
-  sentence = body['content'].to_s
+  sentence = body['content'].to_s.gsub(/\[(.*?):.*?\]/, '\1')
   word_array = []
   result = {original_sentence: sentence, sentence_with_ruby: ''}
 
