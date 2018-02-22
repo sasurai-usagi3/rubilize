@@ -9,6 +9,6 @@ services:
     ports:
       - "${HOST_PORT}:${CONTAINER_PORT}"
     volumes:
-      - "${APP_PATH}:/var/www/html/insta_profile"
+      - "${APP_PATH}:/var/www/html/rubilize"
     env_file:
       - .env
